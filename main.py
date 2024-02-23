@@ -7,7 +7,7 @@ app.config["SECRET_KEY"] = stg.SECRET_KEY
 @app.route("/")
 def index():
     url = url_for("static", "templates/index.html")
-    return redirect(url)
+    return redirect(url) 
 
 @app.route("/post/category")
 def post_category():
