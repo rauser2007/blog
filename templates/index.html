@@ -7,9 +7,12 @@
     <title>Мій блог</title>
 </head>
 <body>
-    <h1>
-        ЗАГОЛОВОК МОГО БЛОГУ
-    </h1>
-    текст текст текст текст
+    {% include "menu.html" %}
+    <main>
+        {%block content%}
+        {% endblock %}
+    </main>
+    {% include "footer.html" %}
+
 </body>
 </html>

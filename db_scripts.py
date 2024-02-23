@@ -12,3 +12,10 @@ def open():
 def close():
     cursor.close()
     connectioin.close()
+
+def getUser():
+    open()
+    cursor.execute('''SELECT * FROM user''')
+    user = cursor.fetchone()
+    close()
+    return user
