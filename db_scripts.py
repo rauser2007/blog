@@ -5,16 +5,16 @@ connection = None
 cursor = None
 
 def open():
-    global connectioin,cursor
-    connectioin = sqlite3.connect(db_name)
-    cursor = connectioin.cursor()
+    global connection,cursor
+    connection = sqlite3.connect(db_name)
+    cursor = connection.cursor()
 
 def new_func():
     return db_name
 
 def close():
     cursor.close()
-    connectioin.close()
+    connection.close()
 
 def getUser():
     open()
@@ -46,6 +46,12 @@ def getPostsByCategory(category_name):
 def addPost(category_id, post_text):
     open()
     cursor.execute('''INSERT INTO post (category_id, post_text)
-                      VALUES ((?), (?)))''', [category_id, post_text])
+                      VALUES ((?), (?))''', [category_id, post_text])
+    connection.commit()
+    close()
+
+def deletePost(post_id):
+    open()
+    cursor.execute('''DELETE FROM post WHERE post_id=(?) ''', [post_id])
     connection.commit()
     close()

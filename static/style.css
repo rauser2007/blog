@@ -1,0 +1,19 @@
+body{
+    background: beige;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.post-image{
+    float: left;
+    border: 5px double gray;
+    margin-right: 10px;
+}
+
+.category_header{
+    font-size: 60px;
+    font-family: 'Centugory Gothic';
+}
+
+.post-input{
+    font-size: large;
+}
